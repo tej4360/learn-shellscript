@@ -15,6 +15,7 @@ echo -e "\e[36m unzip application content \e[0m"
 unzip /tmp/catalogue.zip -y
 echo -e "\e[36m install dependencies\e[0m"
 npm install
+cd /learnshell
 echo -e "\e[36m copy catologue service\e[0m"
 cp Roboshop/catalogue.service /etc/systemd/system/catalogue.service
 echo -e "\e[36m load catalogue service\e[0m"
