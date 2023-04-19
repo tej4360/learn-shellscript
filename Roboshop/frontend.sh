@@ -12,6 +12,6 @@ cd /usr/share/nginx/html
 echo -e "\e[36munzip front end\e[0m"
 unzip /tmp/frontend.zip
 echo -e "\e[36m copy config file\e[0m"
-cp /root/Roboshop/roboshop.sh /etc/nginx/default.d/roboshop.conf
+cp /root/learnshell/Roboshop/roboshop.conf /etc/nginx/default.d/roboshop.conf
 systemctl restart nginx
 
