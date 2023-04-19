@@ -1,17 +1,18 @@
 ##frontend shell automation
-echo -e "\e[36minstall NGINX\e[0m"
+source Roboshop/common.sh
+print_head "install NGINX"
 yum install nginx -y
-echo -e "\e[36m enable NGINX\e[0m"
+print_head "enable NGINX"
 systemctl enable nginx
 systemctl start nginx
-echo -e "\e[36m remove application content\e[0m"
+print_head "remove application content"
 rm -rf /usr/share/nginx/html/*
-echo -e "\e[36mdownload application content \e[0m"
+print_head "download application content"
 curl -o /tmp/frontend.zip https://roboshop-artifacts.s3.amazonaws.com/frontend.zip
 cd /usr/share/nginx/html
-echo -e "\e[36munzip front end\e[0m"
+print_head  "unzip front end"
 unzip /tmp/frontend.zip
-echo -e "\e[36m copy config file\e[0m"
+print_head "copy config file"
 cp /root/learnshell/Roboshop/roboshop.conf /etc/nginx/default.d/roboshop.conf
 systemctl restart nginx
 
