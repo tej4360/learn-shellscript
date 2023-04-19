@@ -17,7 +17,7 @@ cd /app
 echo -e "\e[36m install dependencies\e[0m"
 npm install
 echo -e "\e[36m copy catologue service\e[0m"
-cp Roboshop/catalogue.service /etc/systemd/system/catalogue.service
+cp /learnshell/Roboshop/catalogue.service /etc/systemd/system/catalogue.service
 echo -e "\e[36m load catalogue service\e[0m"
 systemctl daemon-reload
 systemctl enable catalogue
