@@ -12,7 +12,7 @@ echo -e "\e[36m download application content\e[0m"
 curl -o /tmp/catalogue.zip https://roboshop-artifacts.s3.amazonaws.com/catalogue.zip
 cd /app
 echo -e "\e[36m unzip application content \e[0m"
-unzip /tmp/catalogue.zip
+unzip /tmp/catalogue.zip -y
 cd /app
 echo -e "\e[36m install dependencies\e[0m"
 npm install
@@ -23,6 +23,7 @@ systemctl daemon-reload
 systemctl enable catalogue
 systemctl start catalogue
 echo -e "\e[36m install mongo\e[0m"
+cp Roboshop/mongo.repo /etc/yum.repos.d/mongodb.repo
 yum install mongodb-org-shell -y
 echo -e "\e[36m load schema\e[0m"
 mongo --host MONGODB-SERVER-IPADDRESS </app/schema/catalogue.js
