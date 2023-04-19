@@ -26,4 +26,4 @@ echo -e "\e[36m install mongo\e[0m"
 cp /learnshell/Roboshop/mongo.repo /etc/yum.repos.d/mongodb.repo
 yum install mongodb-org-shell -y
 echo -e "\e[36m load schema\e[0m"
-mongo --host mongodb.rtdevopspract.online </app/schema/catalogue.js
+mongo --host mongo.rtdevopspract.online </app/schema/catalogue.js
