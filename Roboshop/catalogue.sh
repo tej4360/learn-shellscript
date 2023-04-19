@@ -18,13 +18,13 @@ cd /app
 echo -e "\e[36m install dependencies\e[0m"
 npm install
 echo -e "\e[36m copy catologue service\e[0m"
-cp /learnshell/Roboshop/catalogue.service /etc/systemd/system/catalogue.service
+cp Roboshop/catalogue.service /etc/systemd/system/catalogue.service
 echo -e "\e[36m load catalogue service\e[0m"
 systemctl daemon-reload
 systemctl enable catalogue
 systemctl start catalogue
 echo -e "\e[36m install mongo\e[0m"
-cp /learnshell/Roboshop/mongo.repo /etc/yum.repos.d/mongodb.repo
+cp Roboshop/mongo.repo /etc/yum.repos.d/mongodb.repo
 yum install mongodb-org-shell -y
 echo -e "\e[36m load schema\e[0m"
 mongo --host mongo.rtdevopspract.online </app/schema/catalogue.js
