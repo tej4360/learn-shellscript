@@ -23,7 +23,7 @@ systemctl daemon-reload
 systemctl enable catalogue
 systemctl start catalogue
 echo -e "\e[36m install mongo\e[0m"
-cp Roboshop/mongo.repo /etc/yum.repos.d/mongodb.repo
+cp /learnshell/Roboshop/mongo.repo /etc/yum.repos.d/mongodb.repo
 yum install mongodb-org-shell -y
 echo -e "\e[36m load schema\e[0m"
 mongo --host MONGODB-SERVER-IPADDRESS </app/schema/catalogue.js
