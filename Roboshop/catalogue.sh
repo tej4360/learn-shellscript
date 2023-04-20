@@ -5,11 +5,8 @@ curl -sL https://rpm.nodesource.com/setup_lts.x | bash &>>/app/roboshop_log
 print_head "<<<install nodejs>>>"
 
 yum install nodejs -y &>>/app/roboshop_log
-print_head "Add application user roboshop"
-id roboshop &>>/app/roboshop_log
-if [$? != 0]; then
-  useradd roboshop
-if
+print_head "<<<Add application user roboshop>>>"
+useradd roboshop &>>/app/roboshop_log
 print_head "Create app dir"
 rm -rf /app
 mkdir /app
