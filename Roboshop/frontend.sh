@@ -2,9 +2,6 @@
 source Roboshop/common.sh
 print_head "install NGINX"
 yum install nginx -y
-print_head "enable NGINX"
-systemctl enable nginx
-systemctl start nginx
 print_head "remove application content"
 rm -rf /usr/share/nginx/html/*
 print_head "download application content"
