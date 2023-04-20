@@ -13,6 +13,6 @@ cd /usr/share/nginx/html
 print_head  "unzip front end"
 unzip /tmp/frontend.zip
 print_head "copy config file"
-cp /root/learnshell/Roboshop/roboshop.conf /etc/nginx/default.d/roboshop.conf
+cp /learnshell/Roboshop/roboshop.conf /etc/nginx/default.d/roboshop.conf
 systemctl restart nginx
 
