@@ -14,5 +14,6 @@ print_head  "unzip front end"
 unzip /tmp/frontend.zip
 print_head "copy config file"
 cp /learnshell/Roboshop/roboshop.conf /etc/nginx/default.d/roboshop.conf
+systemctl enable nginx
 systemctl restart nginx
 
