@@ -6,7 +6,7 @@ print_head "<<<install nodejs>>>"
 
 yum install nodejs -y &>>/app/roboshop_log
 print_head "Add application user roboshop"
-id roboshop
+id roboshop &>>/app/roboshop_log
 if ["$?" != 0] then
   useradd roboshop
 if
@@ -30,5 +30,5 @@ systemctl start catalogue
 print_head "install mongo"
 cp Roboshop/mongo.repo /etc/yum.repos.d/mongodb.repo
 yum install mongodb-org-shell -y &>>/app/roboshop_log
-eprint_head "load schema"
+print_head "load schema"
 mongo --host mongo.rtdevopspract.online </app/schema/catalogue.js
