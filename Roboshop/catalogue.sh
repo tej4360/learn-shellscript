@@ -8,7 +8,6 @@ yum install nodejs -y &>>/app/roboshop_log
 print_head "<<<Add application user roboshop>>>"
 useradd roboshop &>>/app/roboshop_log
 print_head "Create app dir"
-rm -rf /app
 mkdir /app
 print_head "download application content"
 curl -L -o /etc/catalogue.zip https://roboshop-artifacts.s3.amazonaws.com/catalogue.zip
