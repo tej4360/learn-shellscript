@@ -27,4 +27,4 @@ print_head "install mongo"
 cp Roboshop/mongo.repo /etc/yum.repos.d/mongodb.repo
 yum install mongodb-org-shell -y
 print_head "load schema"
-mongo --host mongo.rtdevopspract.online </app/schema/catalogue.js
+mongo --host catalogue.rtdevopspract.online </app/schema/catalogue.js
