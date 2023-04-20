@@ -14,7 +14,7 @@ print_head "download application content"
 curl -L -o /etc/catalogue.zip https://roboshop-artifacts.s3.amazonaws.com/catalogue.zip
 cd /app
 print_head "Unzip application content"
-unzip catalogue.zip -y
+unzip /etc/catalogue.zip -y
 print_head  "install dependencies"
 npm install &>>/app/roboshop_log
 cd /learnshell
