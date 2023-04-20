@@ -7,7 +7,7 @@ print_head "<<<install nodejs>>>"
 yum install nodejs -y &>>/app/roboshop_log
 print_head "Add application user roboshop"
 id roboshop &>>/app/roboshop_log
-if ["$?" != 0] then
+if [$? != 0]; then
   useradd roboshop
 if
 print_head "Create app dir"
