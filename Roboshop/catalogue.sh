@@ -8,6 +8,7 @@ yum install nodejs -y &>>/app/roboshop_log &>>/app/roboshop_log
 fun_stat_check $?
 print_head "<<<Add application user roboshop>>>"
 useradd roboshop &>>/app/roboshop_log &>>/app/roboshop_log
+print_head "remove /app dir"
 rm -rf /app &>>/app/roboshop_log
 fun_stat_check $?
 print_head "Create app dir"
