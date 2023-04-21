@@ -14,11 +14,6 @@ print_head "download application content"
 curl -L -o /tmp/catalogue.zip https://roboshop-artifacts.s3.amazonaws.com/catalogue.zip
 cd /app
 unzip /tmp/catalogue.zip
-
-if [$? != 0]; then
-  print_head "unzip failed"
-  exit
-fi
 print_head  "install dependencies"
 npm install &>>/app/roboshop_log
 cd /learnshell
