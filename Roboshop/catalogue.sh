@@ -11,10 +11,10 @@ rm -rf /app
 print_head "Create app dir"
 mkdir /app
 print_head "download application content"
-curl -L -o /etc/catalogue.zip https://roboshop-artifacts.s3.amazonaws.com/catalogue.zip
+curl -L -o /tmp/catalogue.zip https://roboshop-artifacts.s3.amazonaws.com/catalogue.zip
 cd /app
 print_head "Unzip application content"
-unzip /etc/catalogue.zip -y
+unzip /tmp/catalogue.zip -y
 print_head  "install dependencies"
 npm install &>>/app/roboshop_log
 cd /learnshell
