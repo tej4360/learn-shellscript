@@ -1,5 +1,5 @@
 source /learnshell/Roboshop/common.sh
-component = catalogue
+component=catalogue
 rm -rf /tmp/roboshop_log
 print_head "<<<Setup Node JS>>>>"
 curl -sL https://rpm.nodesource.com/setup_lts.x | bash &>>/tmp/roboshop_log
