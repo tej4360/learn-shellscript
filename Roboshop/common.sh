@@ -8,4 +8,5 @@ fun_stat_check() {
   else
       print_head "******Failure******"
       exit
+  fi
 }
