@@ -17,14 +17,14 @@ unzip /tmp/catalogue.zip
 print_head  "install dependencies"
 npm install &>>/app/roboshop_log
 cd /learnshell
-print_head "copy catologue service"
-cp Roboshop/catalogue.service /etc/systemd/system/catalogue.service
-print_head  "load catalogue service"
 print_head "install mongo"
 cp Roboshop/mongo.repo /etc/yum.repos.d/mongodb.repo
 yum install mongodb-org-shell -y
 print_head "load schema"
 mongo --host mongo.rtdevopspract.online </app/schema/catalogue.js
+print_head "copy catologue service"
+cp Roboshop/catalogue.service /etc/systemd/system/catalogue.service
+print_head  "load catalogue service"
 systemctl daemon-reload
 systemctl enable catalogue
 systemctl start catalogue
