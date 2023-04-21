@@ -3,7 +3,7 @@ print_head(){
 }
 
 fun_stat_check() {
-  if [$1 -eq 0] then
+  if [$1 -eq 0]; then
       print_head ">>>>>Success<<<<<<"
   else
       print_head "******Failure******"
