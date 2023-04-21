@@ -16,6 +16,10 @@ cd /app
 print_head "Unzip application content"
 unzip /tmp/catalogue.zip -y
 print_head  "install dependencies"
+if [$? != 0]; then
+  print_head "unzip failed"
+  exit
+fi
 npm install &>>/app/roboshop_log
 cd /learnshell
 print_head "copy catologue service"
