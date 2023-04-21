@@ -23,9 +23,10 @@ print_head  "install dependencies"
 npm install &>>/tmp/roboshop_log
 fun_stat_check $?
 cd /learnshell
-print_head "install mongo"
+print_head "copy mongo repo file"
 cp Roboshop/mongo.repo /etc/yum.repos.d/mongodb.repo &>>/tmp/roboshop_log
 fun_stat_check $?
+print_head "install mongodb"
 yum install mongodb-org-shell -y &>>/tmp/roboshop_log
 fun_stat_check $?
 print_head "load schema"
