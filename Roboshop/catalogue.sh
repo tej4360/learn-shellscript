@@ -1,4 +1,5 @@
 source /learnshell/Roboshop/common.sh
+component = catalogue
 rm -rf /tmp/roboshop_log
 print_head "<<<Setup Node JS>>>>"
 curl -sL https://rpm.nodesource.com/setup_lts.x | bash &>>/tmp/roboshop_log
@@ -15,9 +16,9 @@ print_head "Create app dir"
 mkdir /app &>>/tmp/roboshop_log
 fun_stat_check $?
 print_head "download application content"
-curl -L -o /tmp/catalogue.zip https://roboshop-artifacts.s3.amazonaws.com/catalogue.zip &>>/tmp/roboshop_log
+curl -L -o /tmp/$component.zip https://roboshop-artifacts.s3.amazonaws.com/$component.zip &>>/tmp/roboshop_log
 cd /app
-unzip /tmp/catalogue.zip &>>/tmp/roboshop_log
+unzip /tmp/$component.zip &>>/tmp/roboshop_log
 fun_stat_check $?
 print_head  "install dependencies"
 npm install &>>/tmp/roboshop_log
@@ -30,13 +31,13 @@ print_head "install mongodb"
 yum install mongodb-org-shell -y &>>/tmp/roboshop_log
 fun_stat_check $?
 print_head "load schema"
-mongo --host mongo.rtdevopspract.online </app/schema/catalogue.js &>>/tmp/roboshop_log
+mongo --host mongo.rtdevopspract.online </app/schema/$component.js &>>/tmp/roboshop_log
 fun_stat_check $?
 print_head "copy catologue service"
-cp Roboshop/catalogue.service /etc/systemd/system/catalogue.service &>>/tmp/roboshop_log
+cp Roboshop/$component.service /etc/systemd/system/$component.service &>>/tmp/roboshop_log
 fun_stat_check $?
 print_head  "load catalogue service"
 systemctl daemon-reload &>>/tmp/roboshop_log
-systemctl enable catalogue &>>/tmp/roboshop_log
-systemctl start catalogue &>>/tmp/roboshop_log
+systemctl enable $component &>>/tmp/roboshop_log
+systemctl start $component &>>/tmp/roboshop_log
 fun_stat_check $?
