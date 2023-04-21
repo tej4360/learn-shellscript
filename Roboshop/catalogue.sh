@@ -7,6 +7,7 @@ print_head "<<<install nodejs>>>"
 yum install nodejs -y &>>/app/roboshop_log
 print_head "<<<Add application user roboshop>>>"
 useradd roboshop &>>/app/roboshop_log
+rm -rf /app
 print_head "Create app dir"
 mkdir /app
 print_head "download application content"
