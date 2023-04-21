@@ -1,41 +1,41 @@
 source /learnshell/Roboshop/common.sh
-rm -rf /app/roboshop_log
-print_head "<<<Setuop Node JS>>>>"
-curl -sL https://rpm.nodesource.com/setup_lts.x | bash &>>/app/roboshop_log
+rm -rf /tmp/roboshop_log
+print_head "<<<Setup Node JS>>>>"
+curl -sL https://rpm.nodesource.com/setup_lts.x | bash &>>/tmp/roboshop_log
 fun_stat_check $?
 print_head "<<<install nodejs>>>"
-yum install nodejs -y &>>/app/roboshop_log &>>/app/roboshop_log
+yum install nodejs -y &>>/tmp/roboshop_log &>>/tmp/roboshop_log
 fun_stat_check $?
 print_head "<<<Add application user roboshop>>>"
-useradd roboshop &>>/app/roboshop_log &>>/app/roboshop_log
+useradd roboshop &>>/tmp/roboshop_log &>>/tmp/roboshop_log
 print_head "remove /app dir"
-rm -rf /app &>>/app/roboshop_log
+rm -rf /app &>>/tmp/roboshop_log
 fun_stat_check $?
 print_head "Create app dir"
-mkdir /app &>>/app/roboshop_log
+mkdir /app &>>/tmp/roboshop_log
 fun_stat_check $?
 print_head "download application content"
-curl -L -o /tmp/catalogue.zip https://roboshop-artifacts.s3.amazonaws.com/catalogue.zip &>>/app/roboshop_log
+curl -L -o /tmp/catalogue.zip https://roboshop-artifacts.s3.amazonaws.com/catalogue.zip &>>/tmp/roboshop_log
 cd /app
-unzip /tmp/catalogue.zip &>>/app/roboshop_log
+unzip /tmp/catalogue.zip &>>/tmp/roboshop_log
 fun_stat_check $?
 print_head  "install dependencies"
-npm install &>>/app/roboshop_log
+npm install &>>/tmp/roboshop_log
 fun_stat_check $?
 cd /learnshell
 print_head "install mongo"
-cp Roboshop/mongo.repo /etc/yum.repos.d/mongodb.repo &>>/app/roboshop_log
+cp Roboshop/mongo.repo /etc/yum.repos.d/mongodb.repo &>>/tmp/roboshop_log
 fun_stat_check $?
-yum install mongodb-org-shell -y &>>/app/roboshop_log
+yum install mongodb-org-shell -y &>>/tmp/roboshop_log
 fun_stat_check $?
 print_head "load schema"
-mongo --host mongo.rtdevopspract.online </app/schema/catalogue.js &>>/app/roboshop_log
+mongo --host mongo.rtdevopspract.online </app/schema/catalogue.js &>>/tmp/roboshop_log
 fun_stat_check $?
 print_head "copy catologue service"
-cp Roboshop/catalogue.service /etc/systemd/system/catalogue.service &>>/app/roboshop_log
+cp Roboshop/catalogue.service /etc/systemd/system/catalogue.service &>>/tmp/roboshop_log
 fun_stat_check $?
 print_head  "load catalogue service"
-systemctl daemon-reload &>>/app/roboshop_log
-systemctl enable catalogue &>>/app/roboshop_log
-systemctl start catalogue &>>/app/roboshop_log
+systemctl daemon-reload &>>/tmp/roboshop_log
+systemctl enable catalogue &>>/tmp/roboshop_log
+systemctl start catalogue &>>/tmp/roboshop_log
 fun_stat_check $?
