@@ -13,8 +13,7 @@ mkdir /app
 print_head "download application content"
 curl -L -o /tmp/catalogue.zip https://roboshop-artifacts.s3.amazonaws.com/catalogue.zip
 cd /app
-print_head "Unzip application content"
-unzip /tmp/catalogue.zip -y
+unzip /tmp/catalogue.zip
 
 if [$? != 0]; then
   print_head "unzip failed"
