@@ -39,13 +39,13 @@ fun_get_app_content() {
 fun_schema_setup() {
   if [ "$schema_setup" == "mongo" ]; then
     print_head "copy mongo repo"
-    cp ${script_path}/mongo.repo /etc/yum.repos.d/mongo.repo &>>$log_file
+    cp ${script_path}/mongo.repo /etc/yum.repos.d/mongo.repo &>>$log_path
     fun_stat_check $?
     print_head "install mongo schema"
-    yum install mongodb-org-shell -y &>>$log_file
+    yum install mongodb-org-shell -y &>>$log_path
     func_stat_check $?
     print_head "Load Schema"
-    mongo --host mongo.rtdevopspact.online </app/schema/${component}.js &>>$log_file
+    mongo --host mongo.rtdevopspact.online </app/schema/${component}.js &>>$log_path
     func_stat_check $?
   fi
 }
