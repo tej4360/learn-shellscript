@@ -45,7 +45,7 @@ fun_schema_setup() {
     yum install mongodb-org-shell -y &>>$log_path
     fun_stat_check $?
     print_head "Load Schema"
-    mongo --host mongo.rtdevopspact.online </app/schema/${component}.js &>>$log_path
+    mongo --host mongo.rtdevopspract.online	 </app/schema/${component}.js &>>$log_path
     fun_stat_check $?
   fi
 }
