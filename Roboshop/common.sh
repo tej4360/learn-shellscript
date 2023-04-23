@@ -14,7 +14,7 @@ fun_stat_check() {
       exit 1
   fi
 }
-fun_user_check() {
+fun_check_user() {
   print_head "in user check function"
   id $app_user &>>log_path
   if [ $? -ne 0]; then
@@ -33,7 +33,7 @@ fun_get_app_content() {
   fun_stat_check $?
   print_head "ext app data"
   cd /app
-  unzip /temp/$component.zip
+  unzip /tmp/$component.zip
   fun_stat_check $?
 }
 fun_schema_Setup() {
