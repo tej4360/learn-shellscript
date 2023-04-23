@@ -33,10 +33,10 @@ fun_get_app_content() {
   fun_stat_check $?
   print_head "ext app data"
   cd /app
-  unzip /tmp/$component.zip
+  unzip /tmp/$component.zip &>>log_path
   fun_stat_check $?
 }
-fun_schema_Setup() {
+fun_schema_setup() {
   if ["$schema_setup" == "mongo"]; then
     print_head "copy mongo repo"
     cp ${script_path}/mongo.repo /etc/yum.repos.d/mongo.repo &>>$log_file
