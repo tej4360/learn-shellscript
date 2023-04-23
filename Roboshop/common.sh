@@ -17,7 +17,7 @@ fun_stat_check() {
 fun_check_user() {
   print_head "in user check function"
   id $app_user &>>log_path
-  if [ $? -ne 0]; then
+  if [ $? -ne 0 ]; then
     print_head "add app user"
     useradd $app_user &>>log_path
     fun_stat_check $?
