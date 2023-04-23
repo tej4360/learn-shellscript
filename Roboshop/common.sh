@@ -21,7 +21,7 @@ fun_user_check() {
     print_head "add app user"
     useradd $app_user &>>log_path
     fun_stat_check $?
-  if
+  fi
 }
 fun_get_app_content() {
   print_head "in fun_get_app_content"
