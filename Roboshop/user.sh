@@ -15,3 +15,4 @@ print_head "install nodejs dependancies"
 npm install &>>log_path
 fun_stat_check $?
 fun_schema_setup
+func_systemd_setup
