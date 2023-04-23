@@ -1,22 +1,24 @@
 ##frontend shell automation
-rm -rf /etc/roboshop_log
-source Roboshop/common.sh
+script=$(realpath "$0")
+script_path=$(dirname "$script")
+rm -rf $log_path
+source $script_path/common.sh
 print_head "install NGINX"
-yum install nginx -y &>>/etc/roboshop_log
+yum install nginx -y &>>$log_path
 fun_stat_check $?
 print_head "remove application content"
-rm -rf /usr/share/nginx/html/* &>>/etc/roboshop_log
+rm -rf /usr/share/nginx/html/* &>>$log_path
 fun_stat_check $?
 print_head "download application content"
-curl -o /tmp/frontend.zip https://roboshop-artifacts.s3.amazonaws.com/frontend.zip &>>/etc/roboshop_log
+curl -o /tmp/frontend.zip https://roboshop-artifacts.s3.amazonaws.com/frontend.zip &>>$log_path
 fun_stat_check $?
 cd /usr/share/nginx/html
 print_head  "unzip front end"
-unzip /tmp/frontend.zip &>>/etc/roboshop_log
+unzip /tmp/frontend.zip &>>$log_path
 fun_stat_check $?
 print_head "copy config file"
-cp /learnshell/Roboshop/roboshop.conf /etc/nginx/default.d/roboshop.conf &>>/etc/roboshop_log
-systemctl enable nginx &>>/etc/roboshop_log
-systemctl restart nginx &>>/etc/roboshop_log
+cp $script_path/roboshop.conf /etc/nginx/default.d/roboshop.conf &>>$log_path
+systemctl enable nginx &>>$log_path
+systemctl restart nginx &>>$log_path
 fun_stat_check $?
 
