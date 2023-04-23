@@ -10,7 +10,7 @@ fun_stat_check() {
       echo -e "\e[35m >>>>>Success<<<<<< \e[0m"
   else
       echo -e "\e[35m ******Failure****** \e[0m"
-      print_head "*** Please refer /tmp/roboshop_log file for detail report *****"
+      print_head "*** Please refer /etc/roboshop_log file for detail report *****"
       exit 1
   fi
 }
