@@ -5,7 +5,7 @@ print_head "download redis"
 yum install https://rpms.remirepo.net/enterprise/remi-release-8.rpm -y &>>$log_path
 fun_stat_check $?
 print_head "enable redis version 6.2"
-dsn module enable redis:remi-6.2 -y &>>$log_path
+dnf module enable redis:remi-6.2 -y &>>$log_path
 fun_stat_check $?
 print_head "install redis"
 yum install redis -y &>>$log_path
