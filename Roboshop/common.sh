@@ -50,11 +50,9 @@ fun_schema_setup() {
   fi
 }
 func_systemd_setup() {
-  print_head "script- $script Script_path- $script_path"
   print_head "Setup SystemD Service"
   cp ${script_path}/${component}.service /etc/systemd/system/${component}.service &>>$log_path
   fun_stat_check $?
-
   print_head "Start ${component} Service"
   systemctl daemon-reload &>>$log_path
   systemctl enable ${component} &>>$log_path
