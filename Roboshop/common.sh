@@ -31,7 +31,7 @@ fun_get_app_content() {
   print_head "download "$component" content"
   curl -L -o /tmp/${component}.zip https://roboshop-artifacts.s3.amazonaws.com/${component}.zip &>>$log_path
   fun_stat_check $?
-  print_head "ext app data"
+  print_head "extract app data"
   cd /app
   unzip /tmp/$component.zip &>>log_path
   fun_stat_check $?
@@ -50,6 +50,7 @@ fun_schema_setup() {
   fi
 }
 func_systemd_setup() {
+  print_head "script- $script Script_path- $script_path"
   print_head "Setup SystemD Service"
   cp ${script_path}/${component}.service /etc/systemd/system/${component}.service &>>$log_path
   fun_stat_check $?
