@@ -48,6 +48,15 @@ fun_schema_setup() {
     mongo --host mongo.rtdevopspract.online	 </app/schema/${component}.js &>>$log_path
     fun_stat_check $?
   fi
+  if [ "$schema_setup" == "mysql "]; then
+    print_head "install mysql"
+    yum install mysql -y &>>$log_path
+    fun_stat_check $?
+
+    print_head "Load Schema"
+    mysql -h mysql.rtdevopspract.online -uroot -p${mysql_root_password} < /app/schema/shipping.sql &>>$log_file
+    func_stat_check $?
+  fi
 }
 func_systemd_setup() {
   print_head "Setup SystemD Service"
