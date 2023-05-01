@@ -26,7 +26,7 @@ systemctl enable rabbitmq-server &>>$log_path
 systemctl restart rabbitmq-server &>>$log_path
 fun_stat_check $?
 
-func_print_head "Add Application User in RabbtiMQ"
+print_head "Add Application User in RabbtiMQ"
 rabbitmqctl add_user roboshop ${rabbitmq_appuser_password} &>>$log_path
 rabbitmqctl set_permissions -p / roboshop ".*" ".*" ".*" &>>$log_path
 fun_stat_check $?
