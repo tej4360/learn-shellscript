@@ -10,7 +10,9 @@ fun_stat_check $?
 print_head "update mongo listen IP"
 sed -i -e 's|127.0.0.1|0.0.0.0|' /etc/mongod.conf &>>$log_path
 fun_stat_check $?
-print_head "start mongo"
+print_head "start mongodb"
+systemctl start mongod &>>$log_path
+fun_stat_check $?
+print_head "enable mongo"
 systemctl enable mongod &>>$log_path
-systemctl restart mongod &>>$log_path
 fun_stat_check $?
