@@ -21,7 +21,7 @@ curl -o /tmp/frontend.zip https://roboshop-artifacts.s3.amazonaws.com/frontend.z
 fun_stat_check $?
 
 print_head "Extracting App Content"
-cd /usr/share/nginx/html &>>$log_path
+  cd /usr/share/nginx/html &>>$log_path
 unzip /tmp/frontend.zip &>>$log_path
 fun_stat_check $?
 
