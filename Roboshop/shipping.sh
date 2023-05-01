@@ -10,12 +10,12 @@ if [ -z "$mysql_root_password" ]; then
 fi
 print_head "Install Maven"
 yum install maven -y &>>$log_path
-func_stat_check $?
+fun_stat_check $?
 fun_check_user
 fun_get_app_content
 print_head "Download Maven Dependencies"
 mvn clean package &>>$log_path
-func_stat_check $?
+fun_stat_check $?
 mv target/${component}-1.0.jar ${component}.jar &>>$log_path
 #func_schema_setup
 #print_head "Update Passwords in System Service file"
