@@ -6,5 +6,5 @@ variable "sample" {
 }
 
 output "sample" {
-        value = "value of map var = ${var.string}"
+        value = "value of map var = ${var.sample.string}"
 }
