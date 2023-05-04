@@ -1,10 +1,8 @@
-variable "sample" {
-    default = {
-        number = 10
-        string = "abc"
-    }
-}
+resource "aws_spot_instance_request" "sample_resource" {
+  ami           = "ami-0089b8e98cd95257d"
+  instance_type = "t3.micro"
 
-output "sample" {
-        value = "value of map var = ${var.sample.string}"
+  tags = {
+    Name = "sample_resource"
+  }
 }
