@@ -10,7 +10,7 @@ variable "sample_list" {
 }
 
 variable "sample_map" {
-    default {
+    default = {
         number1 = 12
         name1 = "abc"
         boolean = "true"
