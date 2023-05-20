@@ -7,6 +7,7 @@ if [ -z "$mysql_root_password" ]; then
   echo Input MySQL Root Password Missing
   exit 1
 fi
+print_head "MYSQ Password - ${mysql_root_password}"
 rm -rf $log_path
 print_head "Disable MySQL 8 Version"
 dnf module disable mysql -y &>>$log_path
