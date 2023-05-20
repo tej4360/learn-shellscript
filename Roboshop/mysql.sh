@@ -3,9 +3,10 @@ script_path=$(dirname "$script")
 source $script_path/common.sh
 component=mysql
 mysql_root_password=$1
+
 if [ -z "$mysql_root_password" ]; then
   echo Input MySQL Root Password Missing
-  exit
+  exit 1
 fi
 #print_head "MYSQ Password - ${mysql_root_password}"
 rm -rf $log_path
