@@ -2,6 +2,7 @@ script=$(realpath "$0")
 script_path=$(dirname "$script")
 source $script_path/common.sh
 component=cart
+rm -rf log_path
 print_head "download node js"
 curl -sL https://rpm.nodesource.com/setup_lts.x | bash &>>log_path
 fun_stat_check $?
