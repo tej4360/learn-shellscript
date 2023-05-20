@@ -24,3 +24,4 @@ fun_stat_check $?
 print_head "Start MySQL"
 systemctl enable mysqld &>>$log_path
 systemctl restart mysqld &>>$log_path
+fun_stat_check $?
