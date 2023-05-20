@@ -9,8 +9,8 @@ fun_stat_check() {
   if [ $1 -eq 0 ]; then
       echo -e "\e[35m >>>>>Success<<<<<< \e[0m"
   else
-      echo -e "\e[35m ******Failure****** $1 \e[0m"
-      print_head "*** Please refer /etc/roboshop_log file for detail report *****"
+      echo -e "\e[35m ******Failure****** $1 "
+      print_head "*** Please refer /etc/roboshop_log file for detail report ***** \e[0m"
       exit 1
   fi
 }
