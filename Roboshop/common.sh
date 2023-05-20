@@ -45,7 +45,7 @@ fun_schema_setup() {
     yum install mongodb-org-shell -y &>>$log_path
     fun_stat_check $?
     print_head "Load Schema"
-    mongo --host mongo.rtdevopspract.online	 </app/schema/${component}.js &>>$log_path
+    mongo --host mongodb-dev.rtdevopspract.online	 </app/schema/${component}.js &>>$log_path
     fun_stat_check $?
   fi
   if [ "$schema_setup" == "mysql "]; then
@@ -54,7 +54,7 @@ fun_schema_setup() {
     fun_stat_check $?
 
     print_head "Load Schema"
-    mysql -h mysql.rtdevopspract.online -uroot -p${mysql_root_password} < /app/schema/shipping.sql &>>$log_file
+    mysql -h mysql-dev.rtdevopspract.online -uroot -p${mysql_root_password} < /app/schema/shipping.sql &>>$log_file
     func_stat_check $?
   fi
 }
