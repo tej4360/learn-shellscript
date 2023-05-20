@@ -4,6 +4,7 @@ source $script_path/common.sh
 component=rabbitmq
 rabbitmq_appuser_password=$1
 
+rm -rf $log_path
 if [ -z "$rabbitmq_appuser_password" ]; then
   print_head "Rabbitmq app user password required"
   exit 1
