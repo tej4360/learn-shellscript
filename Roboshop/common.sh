@@ -49,7 +49,7 @@ fun_schema_setup() {
     mongo --host mongodb-dev.rtdevopspract.online	 </app/schema/${component}.js &>>$log_path
     fun_stat_check $?
   fi
-  if [ "$schema_setup" == "mysql "]; then
+  if [ "$schema_setup" == "mysql" ]; then
     print_head "install mysql"
     yum install mysql -y &>>$log_path
     fun_stat_check $?
