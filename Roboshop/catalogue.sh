@@ -33,7 +33,7 @@ print_head "install mongodb"
 yum install mongodb-org-shell -y &>>log_path
 fun_stat_check $?
 print_head "load schema"
-mongo --host mongo.rtdevopspract.online </app/schema/$component.js &>>log_path
+mongo --host mongodb-dev.rtdevopspract.online </app/schema/$component.js &>>log_path
 fun_stat_check $?
 print_head "copy catologue service"
 cp $script_path/$component.service /etc/systemd/system/$component.service &>>log_path
