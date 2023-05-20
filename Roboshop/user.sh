@@ -4,6 +4,8 @@ source $script_path/common.sh
 app_user=roboshop
 component=user
 schema_setup=mongo
+
+rm -rf log_path
 print_head "download nodejs"
 curl -sL https://rpm.nodesource.com/setup_lts.x | bash &>>log_path
 fun_stat_check $?
