@@ -18,8 +18,8 @@ print_head "Setup RabbitMQ Repos"
 curl -s https://packagecloud.io/install/repositories/rabbitmq/rabbitmq-server/script.rpm.sh | bash &>>$log_path
 fun_stat_check $?
 
-print_head "Install ErLang & RabbitMQ"
-yum install erlang rabbitmq-server -y &>>$log_path
+print_head "Install RabbitMQ"
+yum install rabbitmq-server -y &>>$log_path
 fun_stat_check $?
 
 print_head "Start RabbitMQ Service"
