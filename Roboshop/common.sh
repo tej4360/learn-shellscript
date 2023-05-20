@@ -16,16 +16,17 @@ fun_stat_check() {
 }
 fun_check_user() {
   print_head "in user check function"
-  id $app_user &>>log_path
+  id ${app_user} &>>log_path
   if [ $? -ne 0 ]; then
     print_head "add app user"
-    useradd $app_user &>>log_path
+    useradd ${app_user} &>>log_path
     fun_stat_check $?
   fi
 }
 fun_get_app_content() {
   print_head "in fun_get_app_content"
   rm -rf /app &>>log_path
+  print_head "create app directory"
   mkdir /app &>>log_path
   fun_stat_check $?
   print_head "download "$component" content"
