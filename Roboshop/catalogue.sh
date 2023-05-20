@@ -10,7 +10,7 @@ print_head "<<<install nodejs>>>"
 yum install nodejs -y &>>log_path &>>log_path
 fun_stat_check $?
 print_head "<<<Add application user roboshop>>>"
-useradd roboshop &>>log_path &>>log_path
+useradd roboshop &>>log_path
 print_head "remove /app dir"
 rm -rf /app &>>log_path
 fun_stat_check $?
