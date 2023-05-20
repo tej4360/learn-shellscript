@@ -54,7 +54,7 @@ fun_schema_setup() {
     fun_stat_check $?
 
     print_head "Load Schema"
-    mysql -h mysql-dev.rtdevopspract.online -uroot -p${mysql_root_password} < /app/schema/shipping.sql &>>$log_file
+    mysql -h mysql-dev.rtdevopspract.online -uroot -p${mysql_root_password} < /app/schema/shipping.sql &>>$log_path
     func_stat_check $?
   fi
 }
