@@ -5,7 +5,7 @@ component=mysql
 mysql_root_password=$1
 if [ -z "$mysql_root_password" ]; then
   echo Input MySQL Root Password Missing
-  exit 1
+  exit
 fi
 #print_head "MYSQ Password - ${mysql_root_password}"
 rm -rf $log_path
