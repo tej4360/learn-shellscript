@@ -1,4 +1,6 @@
-source /learnshell/Roboshop/common.sh
+script=$(realpath "$0")
+script_path=$(dirname "$script")
+source $script_path/common.sh
 component=redis
 rm -rf /etc/roboshop.log
 print_head "download redis"

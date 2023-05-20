@@ -1,4 +1,6 @@
-source Roboshop/common.sh
+script=$(realpath "$0")
+script_path=$(dirname "$script")
+source $script_path/common.sh
 app_user=roboshop
 component=user
 schema_setup=mongo
