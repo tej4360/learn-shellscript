@@ -30,7 +30,7 @@ fun_get_app_content() {
   mkdir /app &>>log_path
   fun_stat_check $?
   print_head "download "$component" content"
-  curl -L -o /tmp/${component}.zip https://roboshop-artifacts.s3.amazonaws.com/${component}.zip &>>$log_path
+    curl -L -o /tmp/${component}.zip https://roboshop-artifacts.s3.amazonaws.com/${component}.zip &>>$log_path
   fun_stat_check $?
   print_head "extract app data"
   cd /app
@@ -38,7 +38,7 @@ fun_get_app_content() {
   fun_stat_check $?
 }
 fun_schema_setup() {
-  if [ "$schema_setup" == "mongo" ]; then
+  if [ "${schema_setup}" == "mongo" ]; then
     print_head "copy mongo repo"
     cp ${script_path}/mongo.repo /etc/yum.repos.d/mongo.repo &>>$log_path
     fun_stat_check $?
