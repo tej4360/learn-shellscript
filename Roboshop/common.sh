@@ -1,6 +1,7 @@
 script=$(realpath "$0")
 script_path=$(dirname "$script")
 log_path=/etc/roboshop_log
+app_user = roboshop
 print_head(){
   echo -e "\e[36m $1 \e[0m"
 }
@@ -30,7 +31,7 @@ fun_get_app_content() {
   mkdir /app &>>log_path
   fun_stat_check $?
   print_head "download "$component" content"
-    curl -L -o /tmp/${component}.zip https://roboshop-artifacts.s3.amazonaws.com/${component}.zip &>>$log_path
+  curl -L -o /tmp/${component}.zip https://roboshop-artifacts.s3.amazonaws.com/${component}.zip &>>$log_path
   fun_stat_check $?
   print_head "extract app data"
   cd /app

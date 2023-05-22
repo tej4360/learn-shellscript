@@ -17,7 +17,7 @@ print_head "Download Maven Dependencies"
 mvn clean package &>>$log_path
 fun_stat_check $?
 mv target/${component}-1.0.jar ${component}.jar &>>$log_path
-#func_schema_setup
+func_schema_setup
 #print_head "Update Passwords in System Service file"
 #sed -i -e "s|rabbitmq_appuser_password|${rabbitmq_appuser_password}|" ${script_path}/payment.service &>>$log_path
 func_systemd_setup
