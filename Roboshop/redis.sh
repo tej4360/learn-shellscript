@@ -16,9 +16,9 @@ print_head "update redis listen port in /etc/redis.conf"
 sed -i -e 's|127.0.0.1|0.0.0.0|' /etc/$component.conf &>>$log_path
 fun_stat_check $?
 print_head "update redis listen port in /etc/redis/redis.conf"
-sed -i -e 's|127.0.0.1|0.0.0.0|' /etc/$component.conf &>>$log_path
+sed -i -e 's|127.0.0.1|0.0.0.0|' /etc/redis/$component.conf &>>$log_path
 fun_stat_check $?
 print_head "start redis"
 systemctl enable redis &>>$log_path
-systemctl start redis &>>$log_path
+systemctl restart redis &>>$log_path
 fun_stat_check $?
