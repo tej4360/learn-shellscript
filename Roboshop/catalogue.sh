@@ -25,7 +25,6 @@ fun_stat_check $?
 print_head  "install dependencies"
 npm install &>>log_path
 fun_stat_check $?
-cd /learnshell
 print_head "copy mongo repo file"
 cp $script_path/mongo.repo /etc/yum.repos.d/mongodb.repo &>>log_path
 fun_stat_check $?
