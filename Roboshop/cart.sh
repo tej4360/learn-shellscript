@@ -25,7 +25,6 @@ fun_stat_check $?
 print_head  "install dependencies"
 npm install &>>log_path
 fun_stat_check $?
-cd /learnshell
 print_head "copy cart service"
 cp $script_path/$component.service /etc/systemd/system/$component.service &>>log_path
 fun_stat_check $?
