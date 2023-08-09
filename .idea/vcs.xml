@@ -9,5 +9,7 @@
     <mapping directory="$PROJECT_DIR$/roboshop_terraform" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tf-vpc" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tf-vpc-module" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/tf-vpc-module2" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/tf-vpc2" vcs="Git" />
   </component>
 </project>
