@@ -3,6 +3,8 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/aws-ssm-parameters" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/catalogue" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/frontend" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/learn_ansible" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/learnterraform" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/roboshop_ansible" vcs="Git" />
