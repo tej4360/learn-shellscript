@@ -7,6 +7,7 @@
     <mapping directory="$PROJECT_DIR$/frontend" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/learn_ansible" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/learnterraform" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/roboshop-helm" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/roboshop_ansible" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/roboshop_kubernates" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/roboshop_terraform" vcs="Git" />
